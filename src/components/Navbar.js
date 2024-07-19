@@ -1,7 +1,26 @@
-import React from 'react'
+import React, { useEffect, useState } from "react";
 import logo from "../logo.png";
 import { FaRegUser } from "react-icons/fa";
 const Navbar = () => {
+
+    const [isSticky, setSticky] = useState(false);
+    useEffect(() => {
+        const handleScroll = () => {
+            const offset = window.scrollY;
+            if (offset > 0) {
+                setSticky(true);
+            } else {
+                setSticky(false);
+            }
+        };
+
+        window.addEventListener("scroll", handleScroll);
+
+        return () => {
+            window.removeEventListener("scroll", handleScroll);
+        };
+    }, []);
+
     const navItems = (
         <>
             <li>
@@ -47,8 +66,15 @@ const Navbar = () => {
         </>
     );
     return (
-        <div>
-            <div className="navbar bg-base-100">
+        <header
+            className={`max-w-screen-2xl container mx-auto fixed top-0 left-0 right-0 transition-all duration-300 ease-in-out`}
+        >
+            <div
+                className={`navbar ${isSticky
+                    ? " bg-base-100 transition-all duration-300 ease-in-out"
+                    : ""
+                    }`}
+            >
                 <div className="navbar-start">
                     <div className="dropdown">
                         <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -119,7 +145,7 @@ const Navbar = () => {
                     </button>
                 </div>
             </div>
-        </div>
+        </header>
     )
 }
 
