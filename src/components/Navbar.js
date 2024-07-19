@@ -17,10 +17,10 @@ const Navbar = () => {
                             <a href="/menu">All</a>
                         </li>
                         <li>
-                            <a>Salad</a>
+                            <a href="/menu">Salad</a>
                         </li>
                         <li>
-                            <a>Pizza</a>
+                            <a href="/menu">Pizza</a>
                         </li>
                     </ul>
                 </details>
@@ -30,19 +30,19 @@ const Navbar = () => {
                     <summary>Services</summary>
                     <ul className="p-2">
                         <li>
-                            <a>Online Order</a>
+                            <a href="/menu">Online Order</a>
                         </li>
                         <li>
-                            <a>Table Booking</a>
+                            <a href="/menu">Table Booking</a>
                         </li>
                         <li>
-                            <a>Order Tracking</a>
+                            <a href="/menu">Order Tracking</a>
                         </li>
                     </ul>
                 </details>
             </li>
             <li>
-                <a>Offers</a>
+                <a href="/menu">Offers</a>
             </li>
         </>
     );
@@ -71,7 +71,7 @@ const Navbar = () => {
                     <a href="/">
                         <img src={logo} alt="" className="h-12 w-13" />
                     </a>
-                    <a className="btn btn-ghost text-xl">FoodApp</a>
+                    <a href="/" className="btn btn-ghost text-xl">FoodApp</a>
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">{navItems}</ul>
